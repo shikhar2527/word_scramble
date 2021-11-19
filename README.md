@@ -2,8 +2,7 @@
 Letter Scramble is a game in which players score points by entering words. Once the letters of a word are displayed in the game board which is divided into a 15×7 grid of squares, the player will be able to enter his/her word and win a point. This version was created for computer players and its object is to remove all the letters from the board creating valid words and score the highest possible points. 
 Play it here! https://ogm710811.github.io/letter-scramble-game/ 
 
-## Notable
-https://github.com/nickborbe
+
 
 ## How to Play
 1. Select a topic from the menu. First, go to Menu | Help and take a look to the words in each topic and learn its definition.
