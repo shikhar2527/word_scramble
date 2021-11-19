@@ -15,11 +15,9 @@ https://github.com/nickborbe
 7. Timer will count down until reach 00:00 then the game is over.
 8. The player with the highest score will win.
 
-## Screenshot
-![Game Board](https://github.com/ogm710811/letter-scramble-game/blob/master/images/game-board-screenshot.png)
 
 ## Contributing
 Changes and improvements are more than welcome! Feel free to fork and open a pull request. Please make your changes in a specific branch and request to pull into master! If you can, please make sure the game fully works before sending the pull request, as that will help speed up the process.
 
 ## License
-Copyright 2017 OGM
+Copyright 2021 OGM
