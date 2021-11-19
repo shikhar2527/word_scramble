@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Letter Scramble Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="styles/reset/reset.css" type="text/css" rel="stylesheet">
+
+        <!-- Favicon Generator -->
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="favicons/manifest.json">
+        <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Latest compiled and minified Boostrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles/main.css">
+        
+        <!--jQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>        <!-- my javascript -->
+        <script src="scripts/ion.sound.min.js"></script>
+        <script src="scripts/game_manager.js"></script>
+        <script src="scripts/application.js"></script>
+    </head>
+    <body>
+      <div class="container">
+      <!--header top  -->
+      <div class="row">
+          <div class="col-md-12 header-top">
+              <h1 class="title">LETTER SCRAMBLE GAME</h1>
+          </div>
+          
+      </div>       
+      <!--end header-top-->
+      <!--board = div and tiles-->
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <center>         
+            <div id="game-board">                             
+                <div id="tile-container">
+                    <!--<div id="game-over" class="hidden">Game Over!</div>-->
+                    <!--<div id="game-over" class="hidden">Game Over!</div>-->
+                    <div id="game-over" class="hidden"></div>
+                    <!--first row-->
+                    <!--<div class="tile tile-position-0-0">A</div>
+                    <div class="tile tile-position-0-1"></div>
+                    <div class="tile tile-position-0-2">C</div>
+                    <div class="tile tile-position-0-3">D</div>
+                    <div class="tile tile-position-0-4">E</div>
+                    <div class="tile tile-position-0-5">F</div>
+                    <div class="tile tile-position-0-6">G</div>
+                    <div class="tile tile-position-0-7">H</div>
+                    <div class="tile tile-position-0-8">I</div>
+                    <div class="tile tile-position-0-9">J</div>
+                    <div class="tile tile-position-0-10">K</div>
+                    <div class="tile tile-position-0-11">L</div> 
+                    <div class="tile tile-position-0-12">M</div>
+                    <div class="tile tile-position-0-13">N</div>
+                    <div class="tile tile-position-0-14">P</div>-->
+                    <!--second row-->
+                    <!--<div class="tile tile-position-1-0">R</div>
+                    <div class="tile tile-position-1-1"></div>
+                    <div class="tile tile-position-1-2">T</div>
+                    <div class="tile tile-position-1-3">U</div>
+                    <div class="tile tile-position-1-4">V</div>
+                    <div class="tile tile-position-1-5">X</div>
+                    <div class="tile tile-position-1-6"></div>
+                    <div class="tile tile-position-1-7"></div>
+                    <div class="tile tile-position-1-8"></div>
+                    <div class="tile tile-position-1-9">B</div>
+                    <div class="tile tile-position-1-10">C</div>
+                    <div class="tile tile-position-1-11">D</div>
+                    <div class="tile tile-position-1-12"></div>
+                    <div class="tile tile-position-1-13"></div>
+                    <div class="tile tile-position-1-14">G</div>-->
+                    <!--third row-->
+                    <!--<div class="tile tile-position-2-0">I</div>
+                    <div class="tile tile-position-2-1">J</div>
+                    <div class="tile tile-position-2-2">K</div>
+                    <div class="tile tile-position-2-3">L</div>
+                    <div class="tile tile-position-2-4">M</div>
+                    <div class="tile tile-position-2-5">N</div>
+                    <div class="tile tile-position-2-6">O</div>
+                    <div class="tile tile-position-2-7"></div>
+                    <div class="tile tile-position-2-8">Q</div>
+                    <div class="tile tile-position-2-9">R</div>
+                    <div class="tile tile-position-2-10">S</div>
+                    <div class="tile tile-position-2-11">T</div>
+                    <div class="tile tile-position-2-12">U</div>
+                    <div class="tile tile-position-2-13"></div>
+                    <div class="tile tile-position-2-14"></div>-->
+                    <!--four row-->
+                    <!--<div class="tile tile-position-3-0">Y</div>
+                    <div class="tile tile-position-3-1">Z</div>
+                    <div class="tile tile-position-3-2">A</div>
+                    <div class="tile tile-position-3-3">B</div>
+                    <div class="tile tile-position-3-4">C</div>
+                    <div class="tile tile-position-3-5">D</div>
+                    <div class="tile tile-position-3-6">E</div>
+                    <div class="tile tile-position-3-7">F</div>
+                    <div class="tile tile-position-3-8">G</div>
+                    <div class="tile tile-position-3-9">H</div>
+                    <div class="tile tile-position-3-10">I</div>
+                    <div class="tile tile-position-3-11">J</div>
+                    <div class="tile tile-position-3-12">K</div>
+                    <div class="tile tile-position-3-13">L</div>
+                    <div class="tile tile-position-3-14">M</div>-->
+                    <!--fith row-->
+                    <!--<div class="tile tile-position-4-0"></div>
+                    <div class="tile tile-position-4-1"></div>
+                    <div class="tile tile-position-4-2">T</div>
+                    <div class="tile tile-position-4-3">U</div>
+                    <div class="tile tile-position-4-4"></div>
+                    <div class="tile tile-position-4-5">X</div>
+                    <div class="tile tile-position-4-6">Y</div>
+                    <div class="tile tile-position-4-7">Z</div>
+                    <div class="tile tile-position-4-8">A</div>
+                    <div class="tile tile-position-4-9">B</div>
+                    <div class="tile tile-position-4-10"></div>
+                    <div class="tile tile-position-4-11"></div>
+                    <div class="tile tile-position-4-12">E</div>
+                    <div class="tile tile-position-4-13">F</div>
+                    <div class="tile tile-position-4-14">G</div>-->
+                    <!--six row-->
+                    <!--<div class="tile tile-position-5-0">A</div>
+                    <div class="tile tile-position-5-1">B</div>
+                    <div class="tile tile-position-5-2">C</div>
+                    <div class="tile tile-position-5-3">D</div>
+                    <div class="tile tile-position-5-4"></div>
+                    <div class="tile tile-position-5-5"></div>
+                    <div class="tile tile-position-5-6">G</div>
+                    <div class="tile tile-position-5-7">H</div>
+                    <div class="tile tile-position-5-8">I</div>
+                    <div class="tile tile-position-5-9">J</div>
+                    <div class="tile tile-position-5-10">K</div>
+                    <div class="tile tile-position-5-11"></div> 
+                    <div class="tile tile-position-5-12">M</div>
+                    <div class="tile tile-position-5-13">N</div>
+                    <div class="tile tile-position-5-14">P</div>-->
+                    <!--seven row-->
+                    <!--<div class="tile tile-position-6-0">I</div>
+                    <div class="tile tile-position-6-1">J</div>
+                    <div class="tile tile-position-6-2">K</div>
+                    <div class="tile tile-position-6-3"></div>
+                    <div class="tile tile-position-6-4">M</div>
+                    <div class="tile tile-position-6-5">N</div>
+                    <div class="tile tile-position-6-6">O</div>
+                    <div class="tile tile-position-6-7">P</div>
+                    <div class="tile tile-position-6-8">Q</div>
+                    <div class="tile tile-position-6-9">R</div>
+                    <div class="tile tile-position-6-10">S</div>
+                    <div class="tile tile-position-6-11"></div>
+                    <div class="tile tile-position-6-12">U</div>
+                    <div class="tile tile-position-6-13">V</div>
+                    <div class="tile tile-position-6-14">W</div>-->
+                </div>
+                <!--first row-->       
+                <div class="row">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+                <!--second row-->       
+                <div class="row">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+                <!--third row-->
+                <div class="row">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+                <!--four row-->
+                <div class="row">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+                <!--fith row-->
+                <div class="row">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+                <!--six row-->
+                <div class="row">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+                <!--seven row-->
+                <div class="row">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            </center> 
+        </div>
+        <div class="col-md-3 menu">
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger btn-lg">Menu</button>
+            <button type="button" class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li role="presentation" class="dropdown-header">Topics</li>
+                <li><a href="#">English Words with 3 Letters</a></li>
+                <li><a href="#">English Words with 4 Letters</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--end board = div and tiles  -->
+      <div class="container">
+        <div class="row input">
+          <div class="col-md-2 timer">
+            <h1 class="display">Timer</h1>
+            <div id="clockdiv">
+              <div>
+                <span class="minutes"></span>
+                <div class="smalltext">Minutes</div>
+              </div>
+              <div>
+                <span class="seconds"></span>
+                <div class="smalltext">Seconds</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-4 form">
+              <form>
+                <div class="form-group">
+                    <label for="email">Enter your word here</label>
+                    <input name="name" type="text" autocomplete="off" class="form-control" id="insert-word">
+                    </br>
+                    <button type="submit" class="btn btn-default submit" id="btn-insertWord">Submit</button>
+                </div>
+              </form>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-2 score">
+            <h1 class="display">Score</h1>
+            <div id="scorediv">
+              <div>
+                <span class="current"></span>
+                <div class="smalltext">Current</div>
+              </div>
+              <div>
+                <span class="goal"></span>
+                <div class="smalltext">Goal</div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="row pause-start">
+            <!--<div class="col-md-3 pause-button"><button type="button" class="btn btn-defaul pause">PAUSE</button></div>-->
+            <div class="col-md-3 pause-button"></div>
+            <div class="col-md-3 player" id="player-name"><label for="exampleTextarea">PLAYER</label></div>
+            <div class="col-md-3 player" id="player-level"><label for="exampleTextarea">LEVEL</label></div>
+            <div class="col-md-3 start-button"><button type="button" class="btn btn-defaul start" id="myBtn">START</button></div>
+        </div>  
+      <!--end container-->
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Enter your Name and Select Level</h2>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input name="name" type="text" class="form-control" id="player-name-modal" autocomplete="off" autofocus>
+                </div>
+                <div class="checkbox">
+                    <label class="radio-inline">
+                    <input type="radio" name="optradio" value="Level 1">Level 1
+                    </label>
+                    <label class="radio-inline">
+                    <input type="radio" name="optradio" value="Level 2">Level 2
+                    </label>
+                    <label class="radio-inline">
+                    <input type="radio" name="optradio" value="Level 3">Level 3
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-default submit" id="submit">Submit</button>
+              </form>
+            
+            </div>
+            <div class="modal-footer">
+            <h3>Enjoy Playing!!</h3>
+            </div>
+        </div>
+      </div>
+    </body>
+</html>

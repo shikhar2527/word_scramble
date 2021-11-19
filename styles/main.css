@@ -1,0 +1,552 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
+}
+
+body {
+  background-image: url("../images/scrabble-background.png");
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  /*font-size: 18px;*/
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.header-top {
+  background-color: #000000;
+  border: 3px solid #EA510C;
+  color: #EA510C;
+  text-align: center;
+  height: 102px;
+  top: 5px;
+  left: 15px;
+}
+
+.title {
+  font-size: 52px;
+}
+
+#game-over {
+  background-color: #fff;
+  width: 100px;
+  border: 1px solid red;
+}
+
+.menu {
+  margin-top: 50px;
+  margin-left: 950px;
+  padding-left: 145px;
+}
+
+.btn-danger {
+  background-color: #000000;
+  border: 3px solid #EA510C;
+}
+
+.btn-danger:focus {
+  background-color: #000000;
+}
+
+.btn-danger:hover {
+  background-color: #000000;
+}
+
+.dropdown-menu > li a:hover {
+  background-color: #EA510C;
+}
+
+#game-board {
+  background:#000000;
+  border: 3px solid #EA510C;
+  border-radius: 4px;
+  padding: 5px;
+  height: 430px;
+  width: 910px;
+  position: absolute;
+  /*top: 50%;*/
+  left: 50%;
+  margin: 50px 0 0 -455px;
+}
+
+.row {
+  height: 100%;
+  width: 100%;
+}
+
+/*The .clearfix div clear to ensure it stays beneath 
+both floated columns.*/
+.clearfix {
+  clear: both;
+}
+
+/*reused the .cell styles for the tile class. This helps 
+us avoid rewriting unnecessary conde in our CSS*/
+.cell,
+.tile {
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 50px;
+  float: left;
+  margin: 5px;
+  width: 50px;
+}
+
+.tile {
+  box-sizing: border-box;
+  color: #fff;
+  float: none;
+  font-size: 26px;
+  font-weight: bold;
+  /*padding-top: 10px;*/
+  padding-top: -10px;
+
+  position: absolute;
+  text-align: center;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/*first row*/
+.tile.tile-position-0-0 { transform: translate(0, 0); }
+.tile.tile-position-0-1 { transform: translate(60px, 0);
+                          /*background-color: #5cb85c;*/
+                          background-image: url("../images/fonts/svg/051-apricot.svg") }
+.tile.tile-position-0-2 { transform: translate(120px, 0); }
+.tile.tile-position-0-3 { transform: translate(180px, 0); }
+.tile.tile-position-0-4 { transform: translate(240px, 0); }
+.tile.tile-position-0-5 { transform: translate(300px, 0); }
+.tile.tile-position-0-6 { transform: translate(360px, 0); }
+.tile.tile-position-0-7 { transform: translate(420px, 0); }
+.tile.tile-position-0-8 { transform: translate(480px, 0); }
+.tile.tile-position-0-9 { transform: translate(540px, 0); }
+.tile.tile-position-0-10 { transform: translate(600px, 0); }
+.tile.tile-position-0-11 { transform: translate(660px, 0); }
+.tile.tile-position-0-12 { transform: translate(720px, 0); }
+.tile.tile-position-0-13 { transform: translate(780px, 0); }
+.tile.tile-position-0-14 { transform: translate(840px, 0); }
+/*second row*/
+.tile.tile-position-1-0 { transform: translate(0, 60px); }
+.tile.tile-position-1-1 { transform: translate(60px, 60px);
+                          /*background-color: #3582b8;*/ 
+                          background-image: url("../images/fonts/svg/051-beans.svg") }
+.tile.tile-position-1-2 { transform: translate(120px, 60px); }
+.tile.tile-position-1-3 { transform: translate(180px, 60px); }
+.tile.tile-position-1-4 { transform: translate(240px, 60px); }
+.tile.tile-position-1-5 { transform: translate(300px, 60px); }
+.tile.tile-position-1-6 { transform: translate(360px, 60px);
+                          /*background-color: #f0ad4e;*/ 
+                          background-image: url("../images/fonts/svg/051-branch.svg") }
+.tile.tile-position-1-7 { transform: translate(420px, 60px);
+                          /*background-color: #d9534f;*/ 
+                          background-image: url("../images/fonts/svg/051-bunny.svg") }
+.tile.tile-position-1-8 { transform: translate(480px, 60px);
+                          /*background-color: #428bca;*/ 
+                          background-image: url("../images/fonts/svg/051-cherries.svg") }
+.tile.tile-position-1-9 { transform: translate(540px, 60px); }
+.tile.tile-position-1-10 { transform: translate(600px, 60px); }
+.tile.tile-position-1-11 { transform: translate(660px, 60px); }
+.tile.tile-position-1-12 { transform: translate(720px, 60px);
+                           /*background-color: #5cb85c;*/ 
+                           background-image: url("../images/fonts/svg/051-frog.svg") }
+.tile.tile-position-1-13 { transform: translate(780px, 60px);
+                           /*background-color: #428bca;*/ 
+                           background-image: url("../images/fonts/svg/051-easter-egg.svg") }
+.tile.tile-position-1-14 { transform: translate(840px, 60px); }
+/*third row*/
+.tile.tile-position-2-0 { transform: translate(0, 120px); }
+.tile.tile-position-2-1 { transform: translate(60px, 120px); }
+.tile.tile-position-2-2 { transform: translate(120px, 120px); }
+.tile.tile-position-2-3 { transform: translate(180px, 120px); }
+.tile.tile-position-2-4 { transform: translate(240px, 120px); }
+.tile.tile-position-2-5 { transform: translate(300px, 120px); }
+.tile.tile-position-2-6 { transform: translate(360px, 120px); }
+.tile.tile-position-2-7 { transform: translate(420px, 120px);
+                          /*background-color: #5bc0de;*/ 
+                          background-image: url("../images/fonts/svg/051-watering-can.svg") }
+.tile.tile-position-2-8 { transform: translate(480px, 120px); }
+.tile.tile-position-2-9 { transform: translate(540px, 120px); }
+.tile.tile-position-2-10 { transform: translate(600px, 120px); }
+.tile.tile-position-2-11 { transform: translate(660px, 120px); }
+.tile.tile-position-2-12 { transform: translate(720px, 120px); }
+.tile.tile-position-2-13 { transform: translate(780px, 120px);
+                           /*background-color: #eee;*/
+                           background-image: url("../images/fonts/svg/051-umbrella.svg") }
+.tile.tile-position-2-14 { transform: translate(840px, 120px);
+                           /*background-color: #f0ad4e;*/ 
+                           background-image: url("../images/fonts/svg/051-tree-2.svg") }
+/*four row*/
+.tile.tile-position-3-0 { transform: translate(0, 180px); }
+.tile.tile-position-3-1 { transform: translate(60px, 180px); }
+.tile.tile-position-3-2 { transform: translate(120px, 180px); }
+.tile.tile-position-3-3 { transform: translate(180px, 180px); }
+.tile.tile-position-3-4 { transform: translate(240px, 180px); }
+.tile.tile-position-3-5 { transform: translate(300px, 180px); }
+.tile.tile-position-3-6 { transform: translate(360px, 180px); }
+.tile.tile-position-3-7 { transform: translate(420px, 180px); }
+.tile.tile-position-3-8 { transform: translate(480px, 180px); }
+.tile.tile-position-3-9 { transform: translate(540px, 180px); }
+.tile.tile-position-3-10 { transform: translate(600px, 180px); }
+.tile.tile-position-3-11 { transform: translate(660px, 180px); }
+.tile.tile-position-3-12 { transform: translate(720px, 180px); }
+.tile.tile-position-3-13 { transform: translate(780px, 180px); }
+.tile.tile-position-3-14 { transform: translate(840px, 180px); }
+/*fifth row*/
+.tile.tile-position-4-0 { transform: translate(0, 240px);
+                          /*background-color: #d9534f;*/ 
+                          background-image: url("../images/fonts/svg/051-sunglasses.svg") }
+.tile.tile-position-4-1 { transform: translate(60px, 240px); 
+                          /*background-color: #f0ad4e;*/
+                          background-image: url("../images/fonts/svg/051-sprout.svg") }
+.tile.tile-position-4-2 { transform: translate(120px, 240px); }
+.tile.tile-position-4-3 { transform: translate(180px, 240px); }
+.tile.tile-position-4-4 { transform: translate(240px, 240px);
+                          /*background-color: #f0ad4e;*/ 
+                          background-image: url("../images/fonts/svg/051-shovel.svg") }
+.tile.tile-position-4-5 { transform: translate(300px, 240px); }
+.tile.tile-position-4-6 { transform: translate(360px, 240px); }
+.tile.tile-position-4-7 { transform: translate(420px, 240px); }
+.tile.tile-position-4-8 { transform: translate(480px, 240px); }
+.tile.tile-position-4-9 { transform: translate(540px, 240px); }
+.tile.tile-position-4-10 { transform: translate(600px, 240px);
+                           /*background-color: #f0ad4e;*/ 
+                           background-image: url("../images/fonts/svg/051-scissors.svg") }
+.tile.tile-position-4-11 { transform: translate(660px, 240px);
+                           /*background-color: #d9534f;*/ 
+                           background-image: url("../images/fonts/svg/051-mushroom.svg") }
+.tile.tile-position-4-12 { transform: translate(720px, 240px); }
+.tile.tile-position-4-13 { transform: translate(780px, 240px); }
+.tile.tile-position-4-14 { transform: translate(840px, 240px); }
+/*six row*/
+.tile.tile-position-5-0 { transform: translate(0, 300px); }
+.tile.tile-position-5-1 { transform: translate(60px, 300px); }
+.tile.tile-position-5-2 { transform: translate(120px, 300px); }
+.tile.tile-position-5-3 { transform: translate(180px, 300px); }
+.tile.tile-position-5-4 { transform: translate(240px, 300px);
+                          /*background-color: #555*/ 
+                          background-image: url("../images/fonts/svg/051-lemonade.svg") }
+.tile.tile-position-5-5 { transform: translate(300px, 300px);
+                          /*background-color: #d9534f*/ 
+                          background-image: url("../images/fonts/svg/051-milkshake.svg") }
+.tile.tile-position-5-6 { transform: translate(360px, 300px); }
+.tile.tile-position-5-7 { transform: translate(420px, 300px); }
+.tile.tile-position-5-8 { transform: translate(480px, 300px); }
+.tile.tile-position-5-9 { transform: translate(540px, 300px); }
+.tile.tile-position-5-10 { transform: translate(600px, 300px); }
+.tile.tile-position-5-11 { transform: translate(660px, 300px); 
+                           /*background-color: #5bc0de;*/ 
+                           background-image: url("../images/fonts/svg/051-sun.svg") }
+.tile.tile-position-5-12 { transform: translate(720px, 300px); }
+.tile.tile-position-5-13 { transform: translate(780px, 300px); }
+.tile.tile-position-5-14 { transform: translate(840px, 300px);
+                           /*background-color: #428bca;*/ 
+                           background-image: url("../images/fonts/svg/051-frappe.svg") }
+/*seven row*/
+.tile.tile-position-6-0 { transform: translate(0, 360px); }
+.tile.tile-position-6-1 { transform: translate(60px, 360px); }
+.tile.tile-position-6-2 { transform: translate(120px, 360px); }
+.tile.tile-position-6-3 { transform: translate(180px, 360px);
+                          /*background-color: #5cb85c;*/ 
+                          background-image: url("../images/fonts/svg/051-strawberry.svg") }
+.tile.tile-position-6-4 { transform: translate(240px, 360px); }
+.tile.tile-position-6-5 { transform: translate(300px, 360px); }
+.tile.tile-position-6-6 { transform: translate(360px, 360px); }
+.tile.tile-position-6-7 { transform: translate(420px, 360px); }
+.tile.tile-position-6-8 { transform: translate(480px, 360px); }
+.tile.tile-position-6-9 { transform: translate(540px, 360px); }
+.tile.tile-position-6-10 { transform: translate(600px, 360px); }
+.tile.tile-position-6-11 { transform: translate(660px, 360px);
+                           /*background-color: #5cb85c;*/ 
+                           background-image: url("../images/fonts/svg/051-sunflower.svg") }
+.tile.tile-position-6-12 { transform: translate(720px, 360px); }
+.tile.tile-position-6-13 { transform: translate(780px, 360px); }
+.tile.tile-position-6-14 { transform: translate(840px, 360px); }
+
+/*****************************************************************
+/ Form Column
+/*****************************************************************/
+
+label {
+  color: #EA510C;
+}
+
+.input {
+  margin-top: 480px;
+}
+
+.form {
+  border: 3px solid #EA510C;
+  /*border-radius: 4%;*/
+  /*background-color: floralwhite;*/
+  background-color: #000000;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 100;
+} 
+
+.form-control {
+  border: 3px solid #EA510C;
+}
+
+/*****************************************************************
+/ Timer and Score Columns
+/*****************************************************************/
+.timer, .score {
+  text-align: center;
+  font-weight: bold;
+  margin-top: -25px;
+}
+
+.display {
+  border: 3px solid #EA510C;
+  font-size: 16px;
+}
+
+h1{
+  background-color: #000000;
+  color: #EA510C;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#clockdiv, #scorediv {
+	color: #EA510C;
+	display: inline-block;
+	font-weight: bold;
+	text-align: center;
+	font-size: 30px;
+}
+
+#clockdiv > div,
+#scorediv > div {
+	padding: 5px;
+	border-radius: 3px;
+	background: #000000;
+	display: inline-block;
+}
+
+#clockdiv div > span,
+#scorediv div > span {
+  border: 3px solid #EA510C;
+	padding: 10px;
+	border-radius: 3px;
+  background: snow;
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+/*****************************************************************
+/ Pause and Start Buttons Columns
+/*****************************************************************/
+.pause-start {
+  margin-top: 10px;
+}
+
+.pause-button {
+  padding-left: 55px;
+}
+
+.start-button {
+  padding-left: 155px;
+}
+
+.player {
+  border: 3px solid #EA510C;
+  background-color: #000000;
+  text-align: center;
+  padding-top: 5px;
+  height: 35px;
+}
+
+.pause, .start {
+  color: #000000;
+  font-weight: bold;
+
+}
+
+.pause {
+  border: 3px solid #000000;
+  background-color: #FFFA0B;
+}
+
+.start {
+  border: 3px solid #000000;
+  background-color: #05EE18;
+}
+
+/*****************************************************************
+/ The Modal
+/*****************************************************************/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #000000;
+    color: #EA510C;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #000000;
+    color: #EA510C;
+}
+
+.submit {
+    background-color: #000000;
+    color: #EA510C;
+}
+
+.submit:hover {
+    background-color: #000000;
+    color: #EA510C;
+}
+
+/*****************************************************************
+/ Media Queries
+/*****************************************************************/
+
+/*screen 27''*/
+@media (min-width: 200px) and (min-height: 900px) {
+    .input {
+        margin-top: 480px;
+    }
+}
+
+/*MacBook Pro*/
+@media (max-height: 780px) {
+    .input {
+        margin-top: 385px;
+    }
+
+    #game-board {
+        margin: 15px 0 0 -455px;
+    }
+
+    .menu {
+      margin-top: 20px;
+      margin-left: 900px;
+    }
+
+    .header-top {
+      background-color: #000000;
+      border: 2px solid #EA510C;
+      color: #EA510C;
+      text-align: center;
+      height: 60px;
+      top: 0;
+      left: 15px;
+    }
+
+    .title {
+      font-size: 25px;
+    }
+
+    /*.player {
+      margin-top: -50px;
+    }*/
+
+    .start-button {
+      padding-left: 1005px;
+      margin-top: -35px;
+    }
+}
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}

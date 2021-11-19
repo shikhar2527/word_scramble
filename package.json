@@ -1,0 +1,30 @@
+{
+  "name": "letter-scramble-project",
+  "version": "1.0.0",
+  "description": "A clone to the letter scramble game.",
+  "main": "application.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ogm710811/letter-scramble-project.git"
+  },
+  "keywords": [
+    "letter",
+    "scramble",
+    "game"
+  ],
+  "author": "Orestes Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ogm710811/letter-scramble-project/issues"
+  },
+  "homepage": "https://github.com/ogm710811/letter-scramble-project#readme",
+  "dependencies": {
+    "boostrap": "^1.0.0",
+    "http-server": "^0.9.0",
+    "ion-sound": "^3.0.7",
+    "jquery": "^3.2.1"
+  }
+}
